@@ -21,24 +21,27 @@ void isRectangle(int *result, double *centerX, double *centerY)
     double diagonal_2 = distance_between_two_points(x4, x2, y4, y2);
 
     if((distance_between_two_points(x1,x2,y1,y2) == distance_between_two_points(x3,x4,y3,y4))
-        &&
-        (distance_between_two_points(x2,x3,y2,y3) == distance_between_two_points(x4,x1,y4,y1))
-        &&
-        (diagonal_1 == diagonal_2)
-        &&
-        (distance_between_two_points(x1,x2,y1,y2) < distance_between_two_points(x1,x3,y1,y3))
-        &&
-        (distance_between_two_points(x2,x3,y2,y3) < distance_between_two_points(x2,x4,y2,y4))
-        &&
-        (distance_between_two_points(x3,x4,y3,y4) < distance_between_two_points(x3,x1,y3,y1))
-        )
-        result = 1;
+       &&
+       (distance_between_two_points(x2,x3,y2,y3) == distance_between_two_points(x4,x1,y4,y1))
+       &&
+       (diagonal_1 == diagonal_2)
+       &&
+       (distance_between_two_points(x1,x2,y1,y2) < distance_between_two_points(x1,x3,y1,y3))
+       &&
+       (distance_between_two_points(x2,x3,y2,y3) < distance_between_two_points(x2,x4,y2,y4))
+       &&
+       (distance_between_two_points(x3,x4,y3,y4) < distance_between_two_points(x3,x1,y3,y1))
+            ){
+        *result = 1;
+        *centerX = (x2-x1)/2;
+        *centerY= (y4-y1)/2;
+    }
+    else{
+        *result = 0;
+        *centerX = 0;
+        *centerY = 0;
+    }
 
-
-
-
-
-    )
 }
 
 
